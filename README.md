@@ -35,6 +35,9 @@ Structure and organize an web app net 5.0, I use Clean Architecture.
 <p>
     <b>Console packge: </b> Update-Database, in the data layer.
 </p>
+<p>
+    <b>Email and passward to Login: </b> andre@email.com and senha01.
+</p>
 
 
 ## References
