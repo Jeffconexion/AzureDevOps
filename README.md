@@ -30,6 +30,9 @@ Structure and organize an web app net 5.0, I use Clean Architecture.
     <b>Create a new Shemas: </b> new shemas you call bytebankbd.
 </p>
 <p>
+    <b>ByteBankContexto: </b> Set connectionString.
+</p>
+<p>
     <b>Console packge: </b> Update-Database, in the data layer.
 </p>
 
