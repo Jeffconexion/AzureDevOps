@@ -1,15 +1,12 @@
-﻿using Alura.ByteBank.Dominio.Entidades;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Alura.ByteBank.Dominio.Entidades;
 
 namespace Alura.ByteBank.Infraestrutura.Testes
 {
-    class ByteBankRepositorio : IByteBankRepositorio
-    {
-        private List<Cliente> clientes = new List<Cliente>()
+  class ByteBankRepositorio : IByteBankRepositorio
+  {
+    private List<Cliente> clientes = new List<Cliente>()
         {
             new Cliente
             {
@@ -37,9 +34,9 @@ namespace Alura.ByteBank.Infraestrutura.Testes
             }
         };
 
-        public List<Cliente> Clientes { get { return clientes; } }
+    public List<Cliente> Clientes { get { return clientes; } }
 
-        private List<Agencia> agencias = new List<Agencia>()
+    private List<Agencia> agencias = new List<Agencia>()
         {
             new Agencia()
             {
@@ -66,9 +63,9 @@ namespace Alura.ByteBank.Infraestrutura.Testes
                 Numero=349
             }
         };
-        public List<Agencia> Agencias { get { return agencias; } }
+    public List<Agencia> Agencias { get { return agencias; } }
 
-        private List<ContaCorrente> contas = new List<ContaCorrente>()
+    private List<ContaCorrente> contas = new List<ContaCorrente>()
         {
             new ContaCorrente()
             {
@@ -112,67 +109,67 @@ namespace Alura.ByteBank.Infraestrutura.Testes
             }
         };
 
-        public List<ContaCorrente> Contas{get { return contas; }}
+    public List<ContaCorrente> Contas { get { return contas; } }
 
-        public bool AdicionarConta(ContaCorrente conta)
-        {
-            try
-            {
-                this.Contas.Add(conta);
-                return true;
-            }
-            catch (Exception)
-            {
+    public bool AdicionarConta(ContaCorrente conta)
+    {
+      try
+      {
+        this.Contas.Add(conta);
+        return true;
+      }
+      catch (Exception)
+      {
 
-                return false;
-            }
-            
-        }
+        return false;
+      }
 
-        public bool AdicionarAgencia(Agencia agencia)
-        {
-            try
-            {
-                this.Agencias.Add(agencia);
-                return true;
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
-            
-        }
-
-        public bool AdicionarCliente(Cliente cliente)
-        {
-            try
-            {
-                this.Clientes.Add(cliente);
-                return true;
-            }
-            catch (Exception)
-            {
-
-                return false;
-            }
-            
-        }
-
-        public List<Agencia> BuscarAgencias()
-        {
-            return this.Agencias;
-        }
-
-        public List<Cliente> BuscarClientes()
-        {
-            return this.Clientes;
-        }
-
-        public List<ContaCorrente> BuscarContasCorrentes()
-        {
-            return this.Contas;
-        }
-      
     }
+
+    public bool AdicionarAgencia(Agencia agencia)
+    {
+      try
+      {
+        this.Agencias.Add(agencia);
+        return true;
+      }
+      catch (Exception)
+      {
+
+        return false;
+      }
+
+    }
+
+    public bool AdicionarCliente(Cliente cliente)
+    {
+      try
+      {
+        this.Clientes.Add(cliente);
+        return true;
+      }
+      catch (Exception)
+      {
+
+        return false;
+      }
+
+    }
+
+    public List<Agencia> BuscarAgencias()
+    {
+      return this.Agencias;
+    }
+
+    public List<Cliente> BuscarClientes()
+    {
+      return this.Clientes;
+    }
+
+    public List<ContaCorrente> BuscarContasCorrentes()
+    {
+      return this.Contas;
+    }
+
+  }
 }

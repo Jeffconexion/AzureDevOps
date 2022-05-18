@@ -1,20 +1,18 @@
-﻿using Alura.ByteBank.Infraestrutura.Testes.DTO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Alura.ByteBank.Infraestrutura.Testes.DTO;
 
 namespace Alura.ByteBank.Infraestrutura.Testes
 {
-    public class PixRepositorio:IPixRepositorio
-    {
-        
-        public List<PixDTO> Pixs { get; set; }
+  public class PixRepositorio : IPixRepositorio
+  {
 
-        public PixRepositorio()
-        {
-            this.Pixs = new List<PixDTO>()
+    public List<PixDTO> Pixs { get; set; }
+
+    public PixRepositorio()
+    {
+      this.Pixs = new List<PixDTO>()
             {
                 new PixDTO(){Chave = new Guid("a0b80d53-c0dd-4897-ab90-c0615ad80d5a"),Saldo=10},
                 new PixDTO(){Chave = new Guid("f6555014-4fed-4631-b6da-ad524288457a"),Saldo=236},
@@ -27,15 +25,15 @@ namespace Alura.ByteBank.Infraestrutura.Testes
                 new PixDTO(){Chave = new Guid("8d801594-e7d4-4916-9a38-c04ee15e7dd8"),Saldo=68},
                 new PixDTO(){Chave = new Guid("0f63ff06-1e83-4086-aacb-72f17f572993"),Saldo=65719.82}
             };
-        }
-
-        public PixDTO consultaPix(Guid chave)
-        {
-            PixDTO dto = (from pix in this.Pixs
-                          where pix.Chave == chave
-                          select pix).SingleOrDefault();
-            return dto;
-        }
-
     }
+
+    public PixDTO consultaPix(Guid chave)
+    {
+      PixDTO dto = (from pix in this.Pixs
+                    where pix.Chave == chave
+                    select pix).SingleOrDefault();
+      return dto;
+    }
+
+  }
 }
