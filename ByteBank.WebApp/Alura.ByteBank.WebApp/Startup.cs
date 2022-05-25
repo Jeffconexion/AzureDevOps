@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text;
-using Alura.ByteBank.WebApp.Config;
+using Alura.ByteBank.Dados.Repositorio;
+using Alura.ByteBank.Dominio.Interfaces.Repositorios;
 using Alura.ByteBank.WebApp.Util;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -24,7 +25,11 @@ namespace Alura.ByteBank.WebApp
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-      services.AddDependenciasConfig();
+
+      services.AddTransient<IAgenciaRepositorio, AgenciaRepositorio>();
+      services.AddTransient<IClienteRepositorio, ClienteRepositorio>();
+      services.AddTransient<IContaCorrenteRepositorio, ContaCorrenteRepositorio>();
+
       services.AddControllersWithViews();
       //services.AddSession();
       services.AddDistributedMemoryCache();
