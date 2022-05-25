@@ -26,6 +26,7 @@ namespace Alura.ByteBank.WebApp
     public void ConfigureServices(IServiceCollection services)
     {
 
+      //injeção de dependencias.
       services.AddTransient<IAgenciaRepositorio, AgenciaRepositorio>();
       services.AddTransient<IClienteRepositorio, ClienteRepositorio>();
       services.AddTransient<IContaCorrenteRepositorio, ContaCorrenteRepositorio>();
