@@ -17,11 +17,15 @@ namespace Alura.ByteBank.Dados.Contexto
       /* 1 - string connection get in Portal azure mysql for windos.
        * 2 - Enter Update-Database in console.
        * 3 - Available in Azure.
+       * 
+       * MySqlConnector.MySqlException (0x80004005): Client with IP address '170.78.33.121' is not allowed to connect to this MySQL server.
+       * ---> Problema: depois de um tempo parou de funcionar o mysql azure, estava relacionado com o IP an seção de segurança
+       * ---> Eu apaguei o banco, criei um outro, configurei tudo no azure e rodei o updataDatabase
        */
 
-      string stringconexao = "Server=bytebank2022.mysql.database.azure.com; " +
-                              "Port=3306; Database=bytebankbd; " +
-                              "Uid=kilua@bytebank2022; Pwd=W%N6*bJM3n;";
+      string stringconexao = "Server=databasetreinamento.mysql.database.azure.com; " +
+                              "Port=3306; Database=databasetreinamento; " +
+                              "Uid=kilua@databasetreinamento; Pwd=W%N6*bJM3n;";
 
       optionsBuilder.UseMySql(stringconexao,
                               ServerVersion.AutoDetect(stringconexao));
