@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Alura.ByteBank.Dados.Contexto
 {
+  /// <summary>
+  /// Principais configurações para azure devOps
+  /// </summary>
   public class ByteBankContexto : DbContext
   {
     public DbSet<ContaCorrente> ContaCorrentes { get; set; }
